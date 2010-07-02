@@ -1,0 +1,9 @@
+site_files/db/schema.rb
+site_files/db/*.db
+site_files/config/mailer.yml
+site_files/log/*
+site_files/tmp/*
+.DS_Store
+*~
+antlr_files/*.js
+antlr_files/*.tokens

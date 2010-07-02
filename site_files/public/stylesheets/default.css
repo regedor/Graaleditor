@@ -1,0 +1,4 @@
+#header > h1 a   { text-indent:-6666px; display:block; height:61px;                   }
+#header > h1 a   { background: url(/logo.png) no-repeat 0 0; margin:40px 0 40px 15px; }
+#footer a        { color:#ddaa44;text-decoration:none;}
+.button_to input { color:#ddaa44;text-decoration:none;}

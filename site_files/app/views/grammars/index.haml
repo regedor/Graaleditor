@@ -1,0 +1,29 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first.active=link_to pat(:list), url(:grammars, :index)
+      %li=link_to pat(:new), url(:grammars, :new)
+  .content
+    %h2.title
+      =pat(:all)
+      =mt(:grammars)
+    .inner
+      %table.table
+        %tr
+          %th.first=mat(:grammar, :title)
+          %th=mat(:grammar, :user)
+          %th.last="&nbsp;"
+        -@grammars.each do |grammar|
+          %tr
+            %td.first=grammar.title
+            %td=(grammar.account && (grammar.account.full_name || grammar.account.email)) || "none"
+            %td.last
+              =button_to pat(:show), url(:grammars, :show, :id => grammar.id), :method => :get, :class => :button_to
+              ="|" if current_account
+              =button_to pat(:edit), url(:grammars, :edit, :id => grammar.id), :method => :get, :class => :button_to if current_account
+              ="|" if current_account
+              =button_to pat(:delete), url(:grammars, :destroy, :id => grammar.id), :method => :delete, :class => :button_to if current_account
+      .actions-bar.wat-cf
+        .actions="&nbsp;"
+
+-content_for :sidebar, partial("base/sidebar")

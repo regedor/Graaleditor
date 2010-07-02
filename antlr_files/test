@@ -1,0 +1,35 @@
+grammar g2;
+
+grammar_sq
+	:	rule+
+	;
+
+rule
+	:	identifier ':' alternatives ';'
+	;
+
+identifier
+	:	ID
+	;
+
+alternatives
+	:	alternative ('|' alternative)*
+	;
+
+alternative
+	:	element+
+	;
+
+element
+	:	single (multiplier)?
+	|	'(' element+ ')' (multiplier)?
+	;
+
+multiplier
+	: '*' | '+' | '?'
+	;
+
+single
+	:	STRING | identifier
+	;
+

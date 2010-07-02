@@ -1,0 +1,14 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first=link_to pat(:list), url(:grammars, :index)
+      %li=link_to pat(:new), url(:grammars, :new)
+      %li.active=link_to pat(:edit), url(:grammars, :edit, :id => @grammar.id)
+  .content
+    %h2.title
+      =pat(:edit)
+      =mt(:grammar)
+    .inner
+      -form_for :grammar, url(:grammars, :update, :id => @grammar.id), :method => :put, :class => :form do |f|
+        =partial "grammars/form", :locals => { :f => f }
+

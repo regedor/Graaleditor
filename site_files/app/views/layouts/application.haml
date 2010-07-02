@@ -1,0 +1,40 @@
+!!! Strict
+%html{:lang => "en", :xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}
+    %link{ :href => "/favicon.png", :rel => "shortcut icon" }
+    %title Graal Editor
+    %script{ :type => "text/javascript", :src => "/javascripts/jquery.js" }
+    %script{ :type => "text/javascript", :src => "/javascripts/jquery-ui.js" }
+    %script{ :type => "text/javascript", :src => "/javascripts/default.js" }
+    %script{ :type => "text/javascript", :src => "/javascripts/antlr3-all-min.js" }
+    %script{ :type => "text/javascript", :src => "/javascripts/g2Lexer.js" }
+    %script{ :type => "text/javascript", :src => "/javascripts/g2Parser.js" }
+    %script{ :type => "text/javascript", :src => "/javascripts/jquery.idle-timer.js" }
+    =stylesheet_link_tag :base, "themes/default/style", "jquery-ui", "default"
+    =stylesheet_link_tag :grammar, "default_grammar"
+
+  %body
+    #container
+      #header
+        %h1=link_to "Graal Editor", url(:base_index)
+        #user-navigation
+          %ul.wat-cf
+            %li=link_to pat(:profile), url(:accounts, :edit, :id => current_account.id) if current_account
+            %li=link_to pat(:logout), url(:sessions, :destroy), :method => :delete if current_account
+            %li=link_to pat(:login), url(:sessions, :new) unless current_account
+        #main-navigation
+          %ul.wat-cf
+            -project_modules.each do |project_module|
+              %li{:class => ("active" if request.path_info =~ /^#{project_module.path}/)}
+                =link_to project_module.human_name, project_module.path("/")
+      #wrapper.wat-cf
+        .flash=[:error, :warning, :notice].map { |type| flash_tag(type, :class => "message #{type}") }.join
+        #main
+          =yield
+          #footer
+            .block
+              %p
+                <span xmlns:dc="http://purl.org/dc/elements/1.1/" href="http://purl.org/dc/dcmitype/InteractiveResource" property="dc:title" rel="dc:type">Graal Editor</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.regedor.com/" property="cc:attributionName" rel="cc:attributionURL">Miguel Regedor</a> and <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.regedor.com/" property="cc:attributionName" rel="cc:attributionURL">André Santos</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/2.5/pt/">Creative Commons Attribution-Share Alike 2.5 Portugal License</a>.<br />Source code at <a xmlns:dc="http://purl.org/dc/elements/1.1/" href="http://github.com/regedor/Graaleditor" rel="dc:source">github.com</a>.
+        
+        #sidebar=yield_content :sidebar
