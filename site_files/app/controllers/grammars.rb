@@ -11,7 +11,9 @@ Gralleditor.controllers :grammars do
   end
 
   get :new do
-    @grammar = Grammar.new
+    @grammar       = Grammar.new
+    @grammar.title = "sample grammar"
+    @grammar.body  = "grammar_sq:rule+;rule:identifier':'alternatives';';identifier:ID;grammar_sq:rule+;rule:identifier':'alternatives';';identifier:ID;alternaties:alternative('|'alternative)*;alternative:element+;"
     render 'grammars/new'
   end
 

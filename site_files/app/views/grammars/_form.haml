@@ -18,5 +18,4 @@
 -content_for :sidebar, partial("base/sidebar")
 
 %script== start_editor();
-%script== (function($){ $(document).bind("idle.idleTimer", function(){update_grammar();}); $.idleTimer(7000); })(jQuery);
-
+%script== (function($){ $(document).bind("idle.idleTimer", function(){update_grammar();}); $.idleTimer(3000); })(jQuery);

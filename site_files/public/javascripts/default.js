@@ -1,6 +1,10 @@
 function start_editor(){
-  editable_on('#grammar_title');
-  $('#grammar_title').keypress(function(event){ return event.which != 13; });
+  $(document).ready(start_editor_now) 
+}
+
+function start_editor_now(){
+  //editable_on('#grammar_title');
+  //$('#grammar_title').keypress(function(event){ return event.which != 13; });
   editable_on('#grammar_content');
   update_grammar();
   void 0
@@ -29,7 +33,12 @@ function load_grammar(){
 }
 
 function update_grammar(){
-  g = load_grammar();
+  try {
+    g = load_grammar();
+  }
+  catch(err) {
+    return 0;
+  }
   $('#grammar_content').html(g.grammar_html);
   $('#m_rule_counter          > .m_value').html(g.rule_counter          .toString());
   $('#m_terminal_rule_counter > .m_value').html(g.terminal_rule_counter .toString());

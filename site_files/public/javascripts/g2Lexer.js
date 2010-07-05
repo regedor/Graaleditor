@@ -1,4 +1,4 @@
-// $ANTLR 3.2 Sep 23, 2009 12:02:23 g2.g 2010-04-11 19:46:25
+// $ANTLR 3.2 Sep 23, 2009 12:02:23 g2.g 2010-07-05 02:06:26
 
 var g2Lexer = function(input, state) {
 // alternate constructor @todo
@@ -17,50 +17,50 @@ var g2Lexer = function(input, state) {
 };
 
 org.antlr.lang.augmentObject(g2Lexer, {
-    ID_TERMINAL: 5,
-    T__21: 21,
-    UNICODE_ESC: 9,
-    T__20: 20,
-    OCTAL_ESC: 10,
-    HEX_DIGIT: 8,
-    ID: 4,
-    EOF: -1,
-    T__19: 19,
-    WS: 11,
-    T__16: 16,
-    ESC_SEQ: 7,
-    T__15: 15,
     T__18: 18,
+    STRING: 6,
     T__17: 17,
-    T__12: 12,
+    T__16: 16,
+    T__15: 15,
     T__14: 14,
     T__13: 13,
-    STRING: 6
+    T__12: 12,
+    ID: 4,
+    T__21: 21,
+    T__20: 20,
+    EOF: -1,
+    OCTAL_ESC: 10,
+    ESC_SEQ: 7,
+    UNICODE_ESC: 9,
+    ID_TERMINAL: 5,
+    WS: 11,
+    HEX_DIGIT: 8,
+    T__19: 19
 });
 
 (function(){
 var HIDDEN = org.antlr.runtime.Token.HIDDEN_CHANNEL,
     EOF = org.antlr.runtime.Token.EOF;
 org.antlr.lang.extend(g2Lexer, org.antlr.runtime.Lexer, {
-    ID_TERMINAL : 5,
-    T__21 : 21,
-    UNICODE_ESC : 9,
-    T__20 : 20,
-    OCTAL_ESC : 10,
-    HEX_DIGIT : 8,
-    ID : 4,
-    EOF : -1,
-    T__19 : 19,
-    WS : 11,
-    T__16 : 16,
-    ESC_SEQ : 7,
-    T__15 : 15,
     T__18 : 18,
+    STRING : 6,
     T__17 : 17,
-    T__12 : 12,
+    T__16 : 16,
+    T__15 : 15,
     T__14 : 14,
     T__13 : 13,
-    STRING : 6,
+    T__12 : 12,
+    ID : 4,
+    T__21 : 21,
+    T__20 : 20,
+    EOF : -1,
+    OCTAL_ESC : 10,
+    ESC_SEQ : 7,
+    UNICODE_ESC : 9,
+    ID_TERMINAL : 5,
+    WS : 11,
+    HEX_DIGIT : 8,
+    T__19 : 19,
     getGrammarFileName: function() { return "g2.g"; }
 });
 org.antlr.lang.augmentObject(g2Lexer.prototype, {

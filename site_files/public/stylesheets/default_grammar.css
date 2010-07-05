@@ -4,6 +4,7 @@
 .g_single     {margin-left:.5em;}
 
 
-.g_rule_id        {color: #326;}
-.g_single_ref     {color: #326;}
-.g_single_literal {color: #362;}
+.g_rule_id        {color: #22a;}
+.g_single_ref     {color: #c26;}
+.g_single_literal {color: #3b6;}
+#grammar_content {font-size:1.6em;}
